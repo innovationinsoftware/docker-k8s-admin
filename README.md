@@ -17,6 +17,7 @@ This site includes the slides and labs for the Docker Kubernetes Administration 
 Lab 1: [Images](labs/images/)  
 Lab 2: [Networking](labs/networking/)   
 Lab 3: [Optimizing Dockerfiles](labs/adv-dockerfile/)
+Lab 4: [Docker Volumes](labs/volumes/)
 
 ### Day 1 - Kubernetes
 Lab 1: [Get familiar with Kubectl](labs/commands/)    
