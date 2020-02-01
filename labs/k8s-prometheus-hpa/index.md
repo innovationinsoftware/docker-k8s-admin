@@ -6,22 +6,23 @@ In this lab you will:
 * Configure a Horizontal Pod Autoscaling policy
 * Trigger the HPA and confirm Pods are scaled to handle the load
 
-Autoscaling is a common practice used to dynamically scale up or down worklods based on the required resources.
+Autoscaling is a common practice used to dynamically scale up or down resources based on the workload requirements.
 In Kubernetes there are three types of autoscaling: Horizontal, Vertical and Cluster. 
 The Horizontal Pod Autoscaler increases or decreases the number of Pods in a Deployment based on resource utilization. 
-While the Cluster Autoscaler is highly dependent on the underling capabilities of the cloud provider, the Horizontal and Vertical autoscalers 
+While the Cluster Autoscaler is highly dependent on the underlying capabilities of the cloud provider, the Horizontal and Vertical autoscalers 
 are cloud agnostic.
 
-Kubernetes supports custom metrics and allows 3rd party applications to extend the Kubernetes API by registering themselves as API add-ons.
-This Custom Metrics API along with the aggregation layer make it possible for monitoring systems 
-like Prometheus to expose application-specific metrics which the HPA controller can use.
+Kubernetes supports custom metrics and allows 3rd party applications to extend the Kubernetes API by registering themselves as API add-ons.   
+This Custom Metrics API along with the aggregation layer make it possible for monitoring systems like Prometheus to expose application-specific metrics which the HPA controller can use.
 
 To access the custom metrics you need to install the Metrics Server. The demo application shows how pod autoscaling works 
-based on CPU and memory and then in the second lab you will install Prometheus and a custom API server. Now the API server needs to be registered
+based on CPU and memory and then in the second lab you will install Prometheus and a custom API server. After installation the API server needs to be registered
 with the aggregator layer and the HPA needs to be configured to monitor the custom metrics supplied by the application. 
 
-First step is to install Go.  Following [these instructions](https://golang.org/doc/install) to get it up and running on your system.
-After Go is installed close the  repo
+First step is to install Go.   
+Follow [these instructions](https://golang.org/doc/install) to get it up and running on your system.
+
+After Go is installed clone the repo:
 
 ```bash
 cd $GOPATH
@@ -30,8 +31,8 @@ git clone https://github.com/jruels/k8s-prom-hpa
 
 ### Installing the Metrics-Server 
 
-NOTE: The metrics server is installed on GKE out of the box.
-The metrics server collects CPU and memory usage for pods and nodes by querying data from the `kubernetes.summary_api`. 
+NOTE: The metrics server is installed on GKE out of the box.   
+The metrics server collects CPU and memory usage for pods and nodes by querying data from the `kubernetes.summary_api`.    
 The summary API is a minimal memory-efficient API used for passing data from Kubelet/cAdvisor to the metrics server.
 
 Deploy the Metrics Server in the `kube-system` namespace:
@@ -56,29 +57,29 @@ kubectl get --raw "/apis/metrics.k8s.io/v1beta1/pods" | jq .
 
 ### Auto Scaling based on CPU and memory usage
 
-You will use a small Golang-based web app to test the Horizontal Pod Autoscaler (HPA).
+You will use a small Golang-based web app to test the Horizontal Pod Autoscaler (HPA).   
 
-Deploy the demo app:
+Deploy the demo app:   
 
 ```bash
 kubectl create -f ./podinfo/podinfo-svc.yaml,./podinfo/podinfo-dep.yaml
 ```
 
-To access the application we need to find the `EXTERNAL_IP`
+To access the application we need to find the `EXTERNAL_IP`    
 ```
 kubectl get svc podinfo
 ```
 
-You should see something similiar to: 
+You should see something similiar to:    
 ```
 NAME      TYPE           CLUSTER-IP     EXTERNAL-IP      PORT(S)          AGE
 podinfo   LoadBalancer   10.15.243.98   35.226.204.150   9898:30813/TCP   3h20m
 ```
 
-Now in a browser load http://[EXTERNAL-IP]:9898
+Now in a browser load http://[EXTERNAL-IP]:9898   
 
 Next create a new HPA that maintains a minimum of two replicas and max of ten. The replicas are dynamically
-adjusted, if the average CPU is over 80% or if the memory goes above 200Mi:
+adjusted, if the average CPU is over 80% or if the memory goes above 200Mi:   
 
 Review below
 ```yaml
@@ -149,9 +150,9 @@ kubectl delete -f ./podinfo/podinfo-hpa.yaml,./podinfo/podinfo-dep.yaml,./podinf
 
 ### Setting up a Custom Metrics Server 
 
-Custom metrics autoscaling requires two components:
-A time series database [Prometheus](https://prometheus.io), that collects your applications metrics and stores them.
-The second component is a custom metrics adapter that extends the API with metrics supplied by Prometheus.
+Custom metrics autoscaling requires two components:   
+A time series database [Prometheus](https://prometheus.io), that collects your applications metrics and stores them.   
+The second component is a custom metrics adapter that extends the API with metrics supplied by Prometheus.   
 
 You will deploy Prometheus and the custom metrics adapter into a new `monitoring` namespace
 
@@ -199,10 +200,10 @@ Redeploy the demo application `podinfo`:
 kubectl create -f ./podinfo/podinfo-svc.yaml,./podinfo/podinfo-dep.yaml
 ```
 
-The application exposes a custom metric named `http_requests_total`. 
-The Prometheus adapter marks the metric as a counter metric and removes the `_total` suffix.
+The application exposes a custom metric named `http_requests_total`.    
+The Prometheus adapter marks the metric as a counter metric and removes the `_total` suffix.   
 
-Query the total requests per second from the custom metrics API:
+Query the total requests per second from the custom metrics API:   
 
 ```bash
 kubectl get --raw "/apis/custom.metrics.k8s.io/v1beta1/namespaces/default/pods/*/http_requests" | jq .
@@ -241,7 +242,7 @@ kubectl get --raw "/apis/custom.metrics.k8s.io/v1beta1/namespaces/default/pods/*
 }
 ```
 
-The `m` represents `milli-units`, so for example, `850m` means 850 milli-requests.
+The `m` represents `milli-units`, so for example, `850m` means 850 milli-requests.   
 
 Create a HPA that scales up the `podinfo` deployment if the number of requests goes above 10 per second:
 
@@ -306,8 +307,8 @@ Events:
   Normal  SuccessfulRescale  2m    horizontal-pod-autoscaler  New size: 3; reason: pods metric http_requests above target
 ```
 
-Three replicas are enough to keep the requests per second under 10 per pod, so the replicas will never scale above that.
-At the current rate of requests per second the deployment will never get to the max value of 10 pods. 
+Three replicas are enough to keep the requests per second under 10 per pod, so the replicas will never scale above that.   
+At the current rate of requests per second the deployment will never get to the max value of 10 pods.    
 
 Either wait for the load test to complete or cancel it and confirm the HPA scales down the deployment to it's minimum replicas:
 ```
