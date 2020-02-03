@@ -19,11 +19,14 @@ The .pem file will be provided by the instructor for this lab. This command will
  
 
 3.	Run the following and deploy the MySQL container:  
-`docker run -d --name db -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=wordpress -e MYSQL_USER=wordpress -e MYSQL_PASSWORD=password mysql:5.7`
+```
+docker run -d --name db -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=wordpress -e MYSQL_USER=wordpress -e MYSQL_PASSWORD=password mysql:5.7
+```
 
 4.	Deploy the WordPress container:  
-`docker run -d --name app -e WORDPRESS_DB_HOST=db:3306 -p 80:80 -e WORDPRESS_DB_HOST=db:3306 -e WORDPRESS_DB_PASSWORD=password s5atrain/wordpress:latest`
-
+```
+docker run -d --name app -e WORDPRESS_DB_HOST=db:3306 -p 80:80 -e WORDPRESS_DB_HOST=db:3306 -e WORDPRESS_DB_PASSWORD=password s5atrain/wordpress:latest
+```
 5.	Wait a few seconds for container to start.  
 Check the status of the app container:  
 `docker ps -l`  
@@ -34,8 +37,9 @@ What do you think has happened to result in the container status you see? To con
 `docker stop && docker rm app`
 
 7.	Redeploy WordPress, this time with a link defined to the MySQL container:  
-`docker run -d --name app -e WORDPRESS_DB_HOST=db:3306 --link db:mysql -p 80:80 -e WORDPRESS_DB_HOST=db:3306 -e WORDPRESS_DB_PASSWORD=password s5atrain/wordpress:latest`
-
+```
+docker run -d --name app -e WORDPRESS_DB_HOST=db:3306 --link db:mysql -p 80:80 -e WORDPRESS_DB_HOST=db:3306 -e WORDPRESS_DB_PASSWORD=password s5atrain/wordpress:latest
+```
 8.	In the web browser, open http://`<docker_machine_IP>`:80 
 
 This example now works because the MySQL Database and the WordPress application are able to communicate with each other. The appropriate firewall rules and the updates to /etc/hosts allows the two systems to communicate. 
