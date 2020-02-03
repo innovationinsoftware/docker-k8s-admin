@@ -29,9 +29,11 @@ docker run -d --volumes-from cass-shared --name cass1 -e MAX_HEAP_SIZE="100M" -e
 
 5.	Start a container from the cassandra:2.2 image. Run a Cassandra client tool and connect it to your running server:   
 *Note it may take several seconds for the connection to be established, so wait a minute and try again if it does not work immediately.*  
+
 ```
 docker run -it --rm --link cass1:cass --name cassnew -e MAX_HEAP_SIZE="50M" -e HEAP_NEWSIZE="50M" cassandra:2.2 cqlsh cass   
 ```
+
 
 6.	Enter the following commands when prompted by cqlsh>.  
 ```
