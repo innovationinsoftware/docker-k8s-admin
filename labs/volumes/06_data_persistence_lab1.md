@@ -23,18 +23,22 @@ The .pem file will be provided by the instructor for this lab. This command will
 `docker run -d --volume /var/lib/cassandra/data --name cass-shared alpine echo Data Container`
 
 4.	Next, use the following command to start a new container called cass1 and inherit the volume definitions from the previous step:  
-`docker run -d --volumes-from cass-shared --name cass1 -e MAX_HEAP_SIZE="100M" \`  
-`-e HEAP_NEWSIZE="100M" cassandra:2.2`
+```
+docker run -d --volumes-from cass-shared --name cass1 -e MAX_HEAP_SIZE="100M" -e HEAP_NEWSIZE="100M" cassandra:2.2
+```
 
 5.	Start a container from the cassandra:2.2 image. Run a Cassandra client tool and connect it to your running server:   
 *Note it may take several seconds for the connection to be established, so wait a minute and try again if it does not work immediately.*  
-`docker run -it --rm --link cass1:cass --name cassnew -e MAX_HEAP_SIZE="50M" \`  
-`-e HEAP_NEWSIZE="50M" cassandra:2.2 cqlsh cass`
+```
+docker run -it --rm --link cass1:cass --name cassnew -e MAX_HEAP_SIZE="50M" -e HEAP_NEWSIZE="50M" cassandra:2.2 cqlsh cass
+```
 
 6.	Enter the following commands when prompted by cqlsh>.  
-`select *`  
-`from system.schema_keyspaces`  
-`where keyspace_name = 'volume_persistence_lab';`  
+```
+select *  
+from system.schema_keyspaces  
+where keyspace_name = 'volume_persistence_lab';  
+```
 The machine will output the following code:  
     ```
     keyspace_name | durable_writes | strategy_class | strategy_options
@@ -45,9 +49,11 @@ The machine will output the following code:
 `create keyspace volume_persistence_lab with replication = {'class' : 'SimpleStrategy', 'replication_factor': 1};`
 
 8.	Enter the following commands again:  
-`select *`  
-`from system.schema_keyspaces`  
-`where keyspace_name = 'volume_persistence_lab';`  
+```
+select *  
+from system.schema_keyspaces  
+where keyspace_name = 'volume_persistence_lab';
+```
 The machine will output the following code:  
     ```
     keyspace_name      | durable_writes | strategy_class                              | strategy_options
@@ -65,17 +71,21 @@ The machine will output the following code:
 ### 2. Run a Second Container with the Same Volume Definitions
 Step by Step Guide
 1.	Use the following command to start a new container called cass2 and inherit the volume definitions from the original cass-shared volume:  
-`docker run -d --volumes-from cass-shared --name cass2 -e MAX_HEAP_SIZE="100M" \`  
-`-e HEAP_NEWSIZE="50M" cassandra:2.2`
+```
+docker run -d --volumes-from cass-shared --name cass2 -e MAX_HEAP_SIZE="100M" -e HEAP_NEWSIZE="50M" cassandra:2.2
+```
 
 2.	Start a new container from the cassandra:2.2 image. Run a Cassandra client tool and connect it to your running server: Note it may take several seconds for the connection to be established, so wait a minute and try again if it does not work immediately.  
-`docker run -it --rm --link cass2:cass --name cassnew -e MAX_HEAP_SIZE="50M" \`  
-`-e HEAP_NEWSIZE="50M" cassandra:2.2 cqlsh cass`
+```
+docker run -it --rm --link cass2:cass --name cassnew -e MAX_HEAP_SIZE="50M" -e HEAP_NEWSIZE="50M" cassandra:2.2 cqlsh cass
+```
 
 3.	Enter the following commands when prompted by cqlsh>.  
-`select *`  
-`from system.schema_keyspaces`  
-`where keyspace_name = 'volume_persistence_lab';`  
+```
+select *  
+from system.schema_keyspaces
+where keyspace_name = 'volume_persistence_lab';
+```
 The machine will output the following code:  
     ```
     keyspace_name          | durable_writes | strategy_class                              |
