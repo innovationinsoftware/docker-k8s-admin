@@ -6,8 +6,8 @@ This site includes the slides and labs for the Docker Kubernetes Administration 
 [Slides Day 1](http://bit.ly/docker-k8s-content-1)   
 
 ## Labs
-[lab VMs](https://docs.google.com/spreadsheets/d/1kW1rNQMZVdoYa2IDLZa66rLv122LM_mIfkbjxhEmVsQ/edit?usp=sharing)  
-[Docker Lab](labs/001_setup/)  
+[Lab VMs](https://docs.google.com/spreadsheets/d/1kW1rNQMZVdoYa2IDLZa66rLv122LM_mIfkbjxhEmVsQ/edit?usp=sharing)  
+[Access Docker lab](labs/001_setup/)  
 
 ### Day 1 - Docker
 Lab 1: [Images](labs/images/)  
