@@ -15,14 +15,11 @@ Lab 2: [Networking](labs/networking/)
 Lab 3: [Docker Volumes](labs/volumes/)   
 Lab 4: [Optimizing Dockerfiles](labs/adv-dockerfile/)   
 
-[//]: # (This syntax works like a comment, and won't appear in any output.)
-[//]: # (It’s a little bizarre, but it works with MacDown and Pandoc.)
-
-[//]: # (### Day 1 - Kubernetes)
-[//]: # (Lab 1: [Get familiar with Kubectl](labs/commands/))    
-[//]: # (Lab 2: [Pods](labs/pods/))    
-[//]: # (Lab 3: [Deployments](labs/deployments/))     
-[//]: # (Lab 4: [Horizontal Pod Autoscaler](labs/k8s-prometheus-hpa/))     
+[//]: # ### Day 1 - Kubernetes
+[//]: # Lab 1: [Get familiar with Kubectl](labs/commands/)    
+[//]: # Lab 2: [Pods](labs/pods/)    
+[//]: # Lab 3: [Deployments](labs/deployments/)     
+[//]: # Lab 4: [Horizontal Pod Autoscaler](labs/k8s-prometheus-hpa/)     
 
 [//]: # ### Day 2 - Kubernetes
 [//]: # Lab 4: [Advanced Scheduling](labs/scheduling/)  
