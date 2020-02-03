@@ -35,7 +35,7 @@ You can switch to Insert Text mode with the 'i' command. Edit the file contents 
     LABEL activity="wp-cli-install"  
     
     RUN apt-get update &&\  
-        apt-get install wget  
+        apt-get install wget -y 
     RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar  
     RUN mv wp-cli.phar /usr/local/bin/wp && chmod +x /usr/local/bin/wp  
 ```
