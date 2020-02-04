@@ -15,10 +15,10 @@ gcloud services enable container.googleapis.com
 
 4. Spin up Kubernetes cluster
 ```
-gcloud beta container clusters create istio-demo \
+gcloud container clusters create deloitte-lab \
     --zone=us-central1-f \
     --machine-type=n1-standard-2 \
-    --num-nodes=4
+    --num-nodes=3
 ```
 
 After this command completes you can confirm the cluster is running:
