@@ -3,7 +3,7 @@
 This site includes the slides and labs for the Docker Kubernetes Administration class. 
 
 ## Course Content 
-[Slides Day 1](https://www.dropbox.com/s/71ojftmfsvfchmb/Kube-Admin-day1.pdf?dl=0)   
+[Slides Day 1](http://bit.ly/docker-k8s-content-1)   
 
 ## Labs
 [Lab VMs](https://docs.google.com/spreadsheets/d/1kW1rNQMZVdoYa2IDLZa66rLv122LM_mIfkbjxhEmVsQ/edit?usp=sharing)  
@@ -15,3 +15,19 @@ Lab 2: [Networking](labs/networking/)
 Lab 3: [Docker Volumes](labs/volumes/)   
 Lab 4: [Optimizing Dockerfiles](labs/adv-dockerfile/)   
 
+### Day 1 - Kubernetes
+# Setup Kubernetes Cluster(labs/001-setup-gcp/)
+# Lab 1: [Get familiar with Kubectl](labs/commands/)    
+# Lab 2: [Pods](labs/pods/)    
+# Lab 3: [Deployments](labs/deployments/)     
+# Lab 4: [Horizontal Pod Autoscaler](labs/k8s-prometheus-hpa/)     
+
+<!--
+### Day 2 - Kubernetes
+# Lab 4: [Advanced Scheduling](labs/scheduling/)  
+# Lab 5: [ConfigMap](labs/configmap/)  
+# Lab 6: [Secrets](labs/secrets/)  
+# Lab 7: [Liveness & Readiness checks](labs/health-checks/)  
+# Lab 8: [Role Based Access Controls](labs/rbac/)  
+# Lab 9: [Helm](labs/helm/) 
+-->
