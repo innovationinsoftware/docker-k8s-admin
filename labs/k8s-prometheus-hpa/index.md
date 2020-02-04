@@ -335,6 +335,7 @@ from trying to execute conflicting decisions and provides time for the Cluster A
 ```
 kubectl delete -f ./podinfo/podinfo-svc.yaml,./podinfo/podinfo-dep.yaml
 kubectl delete -f ./podinfo/podinfo-hpa-custom.yaml
-kubectl delete -f ./custom-metrics-apikubectl create -f ./prometheus
+kubectl delete -f ./custom-metrics-api
+kubectl delete -f ./prometheus
 kubectl delete -f ./namespaces.yaml
 ```
