@@ -25,19 +25,22 @@ Follow [these instructions](https://golang.org/doc/install) to get it up and run
 After Go is installed clone the repo:
 
 ```bash
-cd $GOPATH
+cd ~
 git clone https://github.com/jruels/k8s-prom-hpa
 ```
 
 ### Installing the Metrics-Server 
 
-NOTE: The metrics server is installed on GKE out of the box.   
+**NOTE: The metrics server is installed on GKE out of the box.**   
+
+**DO NOT INSTALL ON GKE**
 The metrics server collects CPU and memory usage for pods and nodes by querying data from the `kubernetes.summary_api`.    
 The summary API is a minimal memory-efficient API used for passing data from Kubelet/cAdvisor to the metrics server.
 
 Deploy the Metrics Server in the `kube-system` namespace:
 
 ```bash
+cd ~/k8s-prom-hpa
 kubectl create -f ./metrics-server
 ```
 
