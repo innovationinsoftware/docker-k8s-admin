@@ -286,7 +286,7 @@ podinfo   Deployment/podinfo   899m / 10   2         10        2          1m
 Time to increase the load by sending 25 requests per second:
 ```
 #10K requests rate limited at 25 queries per second
-hey -n 10000 -q 5 -c 5 http://<K8S-IP>:31198/healthz
+hey -n 10000 -q 5 -c 5 http://[EXTERNAL-IP]:9898/healthz
 ```
 
 After a few minutes check the HPA to confirm it is scaling up the deployment:
