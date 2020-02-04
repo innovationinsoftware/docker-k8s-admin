@@ -175,4 +175,9 @@ two-containers                  1/2     Running   0          16m
 kubectl exec -it <mysql-pod-name> -- mysql -ppassword
 ```
 
+4. Exit MySQL container
+```
+exit
+```
+
 ## Lab complete
