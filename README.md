@@ -19,14 +19,16 @@ Lab 4: [Optimizing Dockerfiles](labs/adv-dockerfile/)
 [Setup Kubernetes Cluster](labs/001-setup-gcp/)   
 Lab 1: [Get familiar with Kubectl](labs/commands/)    
 Lab 2: [Pods](labs/pods/)    
-Lab 3: [Deployments](labs/deployments/)     
-Lab 4: [Horizontal Pod Autoscaler](labs/k8s-prometheus-hpa/)     
+Lab 3: [ConfigMap](labs/configmap/)  
+Lab 4: [Secrets](labs/secrets/)  
+<!--
+Lab 5: [Deployments](labs/deployments/)     
+Lab 6: [Horizontal Pod Autoscaler](labs/k8s-prometheus-hpa/)     
+-->
 
 <!--
 ### Day 2 - Kubernetes
 # Lab 4: [Advanced Scheduling](labs/scheduling/)  
-# Lab 5: [ConfigMap](labs/configmap/)  
-# Lab 6: [Secrets](labs/secrets/)  
 # Lab 7: [Liveness & Readiness checks](labs/health-checks/)  
 # Lab 8: [Role Based Access Controls](labs/rbac/)  
 # Lab 9: [Helm](labs/helm/) 
