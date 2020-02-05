@@ -25,6 +25,7 @@ Lab 4: [Secrets](labs/secrets/)
 
 ### Day 3 - Kubernetes
 Lab 5: [Deployments](labs/deployments/)     
-Lab 6: [Horizontal Pod Autoscaler](labs/k8s-prometheus-hpa/)     
-Lab 7: [Vertical Pod Autoscaler & Cluster Autoscaler](labs/k8s-vpa-ca/)     
-Lab 8: [Advanced Scheduling](labs/scheduling/)  
+Lab 6: [Scheduling](labs/scheduling/)     
+Lab 7: [Horizontal Pod Autoscaler](labs/k8s-prometheus-hpa/)     
+Lab 8: [Vertical Pod Autoscaler & Cluster Autoscaler](labs/k8s-vpa-ca/)     
+Lab 9: [Advanced Scheduling](labs/scheduling/)  
