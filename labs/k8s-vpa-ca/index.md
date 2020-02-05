@@ -99,6 +99,12 @@ This shows that the Pods are requesting more resources than are currently availa
 
 After waiting up to 10 minutes you will see new nodes being provisioned to handle the Pod requests. 
 
+Run the following command to see the current `cluster-autoscaler` status. 
+
+```
+kubectl get configmap cluster-autoscaler-status -n kube-system -o yaml
+```
+
 ## Scale down 
 Now if you delete the deployment you should see the nodes being removed after 5 - 10 minutes because they are no longer needed.
 
