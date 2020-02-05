@@ -87,7 +87,7 @@ updatePolicy:
 
 Apply the changed file: 
 ```
-kubectl appy -f manifests/vpa.yaml
+kubectl apply -f manifests/vpa.yaml
 ```
 
 Look at the Pods CPU requests:
