@@ -18,17 +18,7 @@ This Custom Metrics API along with the aggregation layer make it possible for mo
 To access the custom metrics you need to install the Metrics Server. The demo application shows how pod autoscaling works 
 based on CPU and memory and then in the second lab you will install Prometheus and a custom API server. After installation the API server needs to be registered
 with the aggregator layer and the HPA needs to be configured to monitor the custom metrics supplied by the application. 
-
-First step is to install Go.   
-Follow [these instructions](https://golang.org/doc/install) to get it up and running on your system.
-
-After Go is installed clone the repo:
-
-```bash
-cd ~
-git clone https://github.com/jruels/k8s-prom-hpa
-```
-
+<!--
 ### Installing the Metrics-Server 
 
 **NOTE: The metrics server is installed on GKE out of the box.**   
@@ -45,7 +35,7 @@ kubectl create -f ./metrics-server
 ```
 
 After about one minute the `metric-server` starts reporting CPU and memory usage for nodes and pods in the cluster.
-
+-->
 To view nodes metrics run:
 
 ```bash
