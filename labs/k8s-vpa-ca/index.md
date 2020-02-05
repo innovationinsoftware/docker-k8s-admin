@@ -5,7 +5,7 @@ adjust a deployments requested memory and CPU as well as automatically provision
 
 ## Update cluster to support vertical pod autoscaler.    
 ```
-gcloud container clusters update deloitte-lab --enable-vertical-pod-autoscaling --zone use-central1-f
+gcloud container clusters update deloitte-lab --enable-vertical-pod-autoscaling --zone us-central1-f
 ```
 
 After the cluster has completed updating run the following to enable node autoprovisioning (Cluster Autoscaler).   
