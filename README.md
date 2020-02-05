@@ -22,15 +22,9 @@ Lab 1: [Get familiar with Kubectl](labs/commands/)
 Lab 2: [Pods](labs/pods/)    
 Lab 3: [ConfigMap](labs/configmap/)  
 Lab 4: [Secrets](labs/secrets/)  
-<!--
+
+### Day 3 - Kubernetes
 Lab 5: [Deployments](labs/deployments/)     
 Lab 6: [Horizontal Pod Autoscaler](labs/k8s-prometheus-hpa/)     
--->
-
-<!--
-### Day 2 - Kubernetes
-# Lab 4: [Advanced Scheduling](labs/scheduling/)  
-# Lab 7: [Liveness & Readiness checks](labs/health-checks/)  
-# Lab 8: [Role Based Access Controls](labs/rbac/)  
-# Lab 9: [Helm](labs/helm/) 
--->
+Lab 7: [Vertical Pod Autoscaler & Cluster Autoscaler](labs/k8s-vpa-ca/)     
+Lab 8: [Advanced Scheduling](labs/scheduling/)  
