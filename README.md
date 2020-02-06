@@ -29,3 +29,10 @@ Lab 5: [Deployments](labs/deployments/)
 Lab 6: [Scheduling](labs/scheduling/)     
 Lab 7: [Horizontal Pod Autoscaler](labs/k8s-prometheus-hpa/)     
 Lab 8: [Vertical Pod Autoscaler & Cluster Autoscaler](labs/k8s-vpa-ca/)     
+
+## Day 4 - Kubernetes
+Lab 9: [GKE Ingress](labs/ingress/)
+Lab 10: [Helm](labs/helm/)
+Lab 11: [Health Checks(labs/health-checks/)
+Lab 12: [RBAC](labs/rbac/)
+Lab 13: [Init containers](labs/init-containers/)
