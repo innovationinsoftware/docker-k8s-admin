@@ -110,8 +110,8 @@ kubectl get ingress fanout-ingress
 
 Then visit the IP address to see that both applications are reachable on the same load balancer:   
 
-* Visit http://<IP_ADDRESS>/ and note that the response contains Version: 1.0.0 (as the request is routed to the web Service)   
-* Visit http://<IP_ADDRESS>/v2/ and note that the response contains Version: 2.0.0 (as the request is routed to the web2 Service)   
+* Visit http://[IP_ADDRESS]/ and note that the response contains Version: 1.0.0 (as the request is routed to the web Service)   
+* Visit http://[IP_ADDRESS]/v2/ and note that the response contains Version: 2.0.0 (as the request is routed to the web2 Service)   
 The only supported wildcard pattern matching for the path field on GKE Ingress is through the * character. For example, you can have rules with path fields like /* or /foo/bar/*.   
 
 
