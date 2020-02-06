@@ -100,12 +100,12 @@ spec:
 
 Deploy fanout-ingress
 ```
-kubectl create -f fanout-ingress.yaml
+kubectl create -f manifests/fanout-ingress.yaml
 ```
 
 Once the ingress is deployed, find out the public IP address by running:
 ```
-kubectl create -f fanout-ingress.yaml
+kubectl get ingress fanout-ingress 
 ```
 
 Then visit the IP address to see that both applications are reachable on the same load balancer:   
