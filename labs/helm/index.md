@@ -109,12 +109,7 @@ demo-app     LoadBalancer   10.15.246.153   35.232.220.52   80:31075/TCP   2m51s
 ```
 
 ## Confirm app is running 
-To access the app follow the instructions below: 
-```
-export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services demo-app)
-  export NODE_IP=$(curl -s ifconfig.co)
-  echo http://$NODE_IP:$NODE_PORT
-```
+To access the app follow the instructions from the helm install command:
 
 This will show the URL to load in a browser to access the application. 
 
