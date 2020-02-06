@@ -153,7 +153,7 @@ service:
 We also need to update `targetPort` in `demo-app/templates/service.yaml` so it will point to port we defined in `values.yaml`
 
 
-```
+```yaml
 spec:
     type: {{ .Values.service.type }}
     ports:
