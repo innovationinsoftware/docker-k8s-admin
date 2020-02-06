@@ -17,7 +17,7 @@ kubectl apply -f manifests/web-deployment.yaml
 ## Create service
 An Ingress still requires a Service which will load balance traffic to all of the pods in the Deployment with matching Selector labels. 
 ```
-kubectl apply -f web-service.yaml
+kubectl apply -f manifests/web-service.yaml
 ```
 
 When you create a Service of type `NodePort` with this command, GKE makes your Service available on a randomly- selected port over 30000 on all nodes in the cluster, as discussed.
@@ -39,7 +39,7 @@ On GKE, Ingress is implemented using Cloud Load Balancing. When you create an In
 
 Create the Ingress 
 ```
-kubectl apply -f basic-ingress.yaml
+kubectl apply -f manifests/basic-ingress.yaml
 ```
 Once you deploy this manifest, Kubernetes creates an Ingress resource on your cluster. The Ingress controller running in your cluster is responsible for creating an HTTP Load Balancer to route all external HTTP traffic (on port 80) to the web NodePort Service you exposed.
 
@@ -66,12 +66,12 @@ You can run multiple services on a single load balancer and public IP by configu
 Create another web server Deployment with version 2.0 of the same web application.
 
 ```
-kubectl apply -f web-deployment-v2.yaml
+kubectl apply -f manifests/web-deployment-v2.yaml
 ```
 
 Then, expose the web2 Deployment internally to the cluster on a NodePort Service called web2.   
 ```
-kubectl apply -f web-service-v2.yaml
+kubectl apply -f manifests/web-service-v2.yaml
 ```
 
 The following manifest describes an Ingress resource that:   
