@@ -37,3 +37,6 @@ Lab 9: [GKE Ingress](labs/ingress/)
 Lab 10: [Helm](labs/helm/)   
 Lab 11: [Health Checks](labs/health-checks/)   
 Lab 12: [RBAC](labs/rbac/)   
+
+## Day 5 - Kubernetes
+Lab 13: [Persistent Storage](labs/persistent-storage/)
