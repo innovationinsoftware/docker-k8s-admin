@@ -299,4 +299,10 @@ You can also check by looking at the `helm history`
 
 You should now see 3 releases and the current one has a description of "Rollback to v1" 
 
+If you would like to see more information about a revision you can run:  
+
+```
+helm status helm-demo-app --revision 1 
+```
+
 ## Congratulations!
