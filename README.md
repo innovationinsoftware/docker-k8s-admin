@@ -40,4 +40,5 @@ Lab 11: [Health Checks](labs/health-checks/)
 Lab 12: [RBAC](labs/rbac/)   
 
 ## Day 5 - Kubernetes
-Lab 13: [Persistent Storage](labs/persistent-storage/)
+Lab 13: [init containers](labs/init-containers/)
+Lab 14: [Persistent Storage](labs/persistent-storage/)
