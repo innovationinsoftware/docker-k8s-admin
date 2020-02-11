@@ -16,9 +16,9 @@ Lab 2: [Networking](labs/networking/)
 Lab 3: [Docker Volumes](labs/volumes/)   
 Lab 4: [Optimizing Dockerfiles](labs/adv-dockerfile/)   
 
-### Day 2 - Kubernetes
-[Setup Kubernetes Cluster](labs/001-setup-gcp/)
-Lab 1: [Get familiar with Kubectl](labs/commands/)
-Lab 2: [Pods](labs/pods/)
-Lab 3: [ConfigMap](labs/configmap/)
-Lab 4: [Secrets](labs/secrets/)
+### Day 2 - Kubernetes    
+[Setup Kubernetes Cluster](labs/001-setup-gcp/)   
+Lab 1: [Get familiar with Kubectl](labs/commands/)   
+Lab 2: [Pods](labs/pods/)   
+Lab 3: [ConfigMap](labs/configmap/)   
+Lab 4: [Secrets](labs/secrets/)   
