@@ -46,7 +46,7 @@ kubectl get pod nginx-pod-lab-<name> -o json
 
 8. Now get info about it in `YAML` syntax
 ```
-kubectl get pod nginx-pod-lab-<name> -o yml
+kubectl get pod nginx-pod-lab-<name> -o yaml
 ```
 
 9. Delete everything! 
