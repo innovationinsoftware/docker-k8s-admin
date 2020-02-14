@@ -38,7 +38,7 @@ Lab 10: [Helm](labs/helm/)
 Lab 11: [Health Checks](labs/health-checks/)  
 Lab 12: [RBAC](labs/rbac/)  
 
-## Day 5 - Kubernetes
-Lab 13: [StatefulSets](labs/stateful/)
-Lab 14: [init containers](labs/init-containers/)
-Lab 15: [Persistent Storage](labs/persistent-storage/)
+### Day 5 - Kubernetes
+Lab 13: [StatefulSets](labs/stateful/)   
+Lab 14: [init containers](labs/init-containers/)   
+Lab 15: [Persistent Storage](labs/persistent-storage/)   
