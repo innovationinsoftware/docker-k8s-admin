@@ -192,7 +192,7 @@ Notice you are specifying the service name and the pod selector labels to match 
 
 Create the service by using kubectl:
 ```
-kubectl apply -f manifests/apache_statefulset_service.yaml
+kubectl apply -f manifests/apache_stateful_service.yaml
 service/web-access-svc created
 ```
 ## Listing The Created Components
@@ -244,7 +244,7 @@ This is the default page that Apache displays. The Service is routing the reques
 The StatefulSet is all about uniquely identifying pods. So, let’s try connecting to a specific pod:
 
 ```
-curl webapp1.web-svc
+curl webapp-1.web-svc
 root@webapp-0:/usr/local/apache2# curl webapp-1.web-svc
 <html><body><h1>It works!</h1></body></html>
 ```
