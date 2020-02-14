@@ -135,7 +135,7 @@ spec:
 ## Creating The StatefulSet
 Now that we have the definition file in place, we can use kubectl to apply it as follows:
 ```
-kubectl apply -f apache_stateful.yaml
+kubectl apply -f manifests/apache_stateful.yaml
 ```
 Since the definition file contains a StorageClass and a StatefulSet resource, the following output is displayed:
 
@@ -192,7 +192,7 @@ Notice you are specifying the service name and the pod selector labels to match 
 
 Create the service by using kubectl:
 ```
-kubectl apply -f apache_statefulset_service.yaml
+kubectl apply -f manifests/apache_statefulset_service.yaml
 service/web-access-svc created
 ```
 ## Listing The Created Components
