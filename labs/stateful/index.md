@@ -135,7 +135,7 @@ spec:
 ## Creating The StatefulSet
 Now that we have the definition file in place, we can use kubectl to apply it as follows:
 ```
-kubectl apply -f apache-stateful.yaml
+kubectl apply -f apache_stateful.yaml
 ```
 Since the definition file contains a StorageClass and a StatefulSet resource, the following output is displayed:
 
@@ -171,7 +171,7 @@ webapp-2   1/1 	Running   0      	111m
 All our pods are now started.
 
 ## Creating a Headless Service For Our StatefulSet
-Right now, the pods are running. But how can a web server access another one? This is done through the Service, so we need to create one. Open a new YAML file called apache_statefulset_service.yaml and add the following to it:
+Right now, the pods are running. But how can a web server access another one? This is done through the Service, so we need to create one. Review `apache_stateful_service.yaml`:
 
 ```
 apiVersion: v1
@@ -188,7 +188,7 @@ spec:
   selector:
     app: web
 ```
-Don’t forget to specify the service name and the pod selector labels to match the ones that you defined in the StatefulSet definition file.
+Notice you are specifying the service name and the pod selector labels to match the ones that you defined in the StatefulSet definition file.
 
 Create the service by using kubectl:
 ```
