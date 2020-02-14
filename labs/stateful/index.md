@@ -247,6 +247,7 @@ The StatefulSet is all about uniquely identifying pods. So, let’s try connecti
 curl webapp1.web-svc
 root@webapp-0:/usr/local/apache2# curl webapp-1.web-svc
 <html><body><h1>It works!</h1></body></html>
+```
 By prefixing the service name to the pod name, you can connect to that specific pod.
 
 ## Deleting The StatefulSet
