@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: webapp
+spec:
+  selector:
+    matchLabels:
+      app: web
+  serviceName: web-svc
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      terminationGracePeriodSeconds: 10
+        containers:
+  	- name: web
+    	  image: httpd:2.4
+    	  ports:
+    	  - containerPort: 80
+      	    name: http
+    	volumeMounts:
+    	- name: www
+      	  mountPath: /var/www/html
+      volumeClaimTemplates:
+      - metadata:
+  	name: www
+  	annotations:
+    	volume.beta.kubernetes.io/storage-class: www-disk
+	spec:
+  	  accessModes: [ "ReadWriteOnce" ]
+  	  resources:
+    	    requests:
+      	      storage: 1Gi
